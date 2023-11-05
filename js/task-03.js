@@ -12,3 +12,37 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
+
+const list = document.querySelector('.gallery');
+
+// стилі для ul
+list.style.display = 'flex';
+list.style.flexDirection = 'column';
+list.style.listStyle = 'none';  
+list.style.rowGap = '12px'
+
+// функція по ТЗ
+function renderImages(arr) {
+  const markup = arr
+    .map(({ url, alt }) => {
+      return `<li><img src=${url} alt=${alt}/></li>`;
+    })
+    .join('');
+    
+  list.insertAdjacentHTML('beforeend', markup);
+  
+  // до перебору задля зміни стилю усіх елементів нас ще не вчили)))
+  document.querySelectorAll('.gallery img').forEach(item => {
+    item.style.display = 'block';
+    item.style.maxHeight = '33.3vh';
+    item.style.transition = 'transform .2s ease';
+    item.addEventListener('mouseover', () => {
+      item.style.transform = 'scale(110%)';
+    });
+    item.addEventListener('mouseout', () => {
+      item.style.transform = 'scale(100%)';
+    });
+  });
+}
+
+renderImages(images);
