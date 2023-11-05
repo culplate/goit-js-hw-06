@@ -37,10 +37,10 @@ function renderImages(arr) {
     item.style.maxHeight = '33.3vh';
     item.style.transition = 'transform .2s ease';
     item.addEventListener('mouseover', () => {
-      item.style.transform = 'scale(110%)';
+      item.style.transform = 'scale(1.1)';
     });
     item.addEventListener('mouseout', () => {
-      item.style.transform = 'scale(100%)';
+      item.style.transform = 'scale(1)';
     });
   });
 }
