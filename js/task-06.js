@@ -10,4 +10,3 @@ inputField.addEventListener('blur', () => {
         inputField.classList.remove('valid')
     }
 });
-
