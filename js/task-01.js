@@ -1,4 +1,4 @@
-const categoriesItems = categories.querySelectorAll('.item');
+const categoriesItems = document.querySelectorAll('.item');
     
 function showCounters(arr) {
     const categoriesList = document.querySelector('#categories');
